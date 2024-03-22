@@ -10,8 +10,10 @@ mc.connect('mongodb://localhost:27017')
     const dbObj=client.db('webathondb')
     const userCollectionObj=dbObj.collection('users');
     const reciepeCollectionObj=dbObj.collection('reciepeCollection');
+    const savedReciepesCollectionObj=dbObj.collection('savedReciepeCollection');
     app.set('userCollection',userCollectionObj)
     app.set('reciepeCollection',reciepeCollectionObj);
+    app.set('savedReciepeCollection',savedReciepesCollectionObj);
     console.log("CONNECTION TO DATABASE SUCCESSFUL")
 })
 .catch(err=>{

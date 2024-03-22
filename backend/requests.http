@@ -34,7 +34,8 @@ Content-Type: application/json
     "username":"akshay",
     "comments":[],
     "ingredients":[],
-    "likes":[]
+    "likes":[],
+    "status":true
 }
 
 ### add comments
@@ -61,19 +62,27 @@ Content-Type: application/json
     "username":"akshay",
     "comments":[],
     "ingredients":[],
-    "likes":[]
+    "likes":[],
+    "status":true
 }
 
-### EDIT LIKE STATUS
-PUT http://localhost:6000/user-api/like/1711044139/akshay
+###  LIKE RECIEPE 
+POST http://localhost:6000/user-api/like/1711092614
 Content-Type: application/json
 
 {
-    "reciepeId":"1711044139",
-    "title":"NEW NEW PIZZA",
-    "cuisine":"ITALIAN",
-    "content":"............",
-    "username":"akshay",
-    "comments":[],
-    "likes":[]
+    "username":"akshay"
 }
+
+### UNLIKE RECIEPE
+POST http://localhost:6000/user-api/unlike/1711092614
+Content-Type: application/json
+
+{
+    "username":"akshay"
+}
+
+### SAVED RECIEPES OF A USER
+GET http://localhost:6000/user-api/fav-reciepes/preethi
+
+

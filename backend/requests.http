@@ -1,0 +1,79 @@
+### REGISTER
+POST http://localhost:6000/user-api/user
+Content-Type: application/json
+
+{
+    "username":"akshay",
+    "password":"akshay",
+    "email":"akshay@gmail.com"
+}
+
+### LOGIN
+POST http://localhost:6000/user-api/login
+Content-Type: application/json
+
+{
+    "username":"akshay",
+    "password":"akshay"           
+}
+
+### RECIEPES REQUEST
+GET http://localhost:6000/user-api/reciepes
+
+### POST RECIEPE
+POST http://localhost:6000/user-api/new-reciepe
+Content-Type: application/json
+
+{
+    "reciepeId":"{{$timestamp}}",
+    "title":"BIRYANI",
+    "cuisine":"INDIAN",
+    "content":"............",
+    "Time":"2h",
+    "dateOfCreation":"{{$datetime iso8601}}",
+    "username":"akshay",
+    "comments":[],
+    "ingredients":[],
+    "likes":[]
+}
+
+### add comments
+POST http://localhost:6000/user-api/comments/1711078980
+Content-Type: application/json
+
+{
+    "username":"keerthika",
+    "comment":"wow!",
+    "rating":5
+}
+
+### EDIT OWN RECIEPES
+PUT http://localhost:6000/user-api/reciepe/1711044139
+Content-Type: application/json
+
+{
+    "reciepeId":"1711044139",
+    "title":"NEW NEW PIZZA",
+    "cuisine":"ITALIAN",
+    "content":"............",
+    "Time":"2h",
+    "dateOfCreation":"{{$datetime iso8601}}",
+    "username":"akshay",
+    "comments":[],
+    "ingredients":[],
+    "likes":[]
+}
+
+### EDIT LIKE STATUS
+PUT http://localhost:6000/user-api/like/1711044139/akshay
+Content-Type: application/json
+
+{
+    "reciepeId":"1711044139",
+    "title":"NEW NEW PIZZA",
+    "cuisine":"ITALIAN",
+    "content":"............",
+    "username":"akshay",
+    "comments":[],
+    "likes":[]
+}
